@@ -267,6 +267,26 @@ for name in audit curvature forest map elimination cyclic_map; do
 done
 ```
 
+## Check the installed package
+
+```sh
+python -m pip install setuptools wheel
+python tools/check_installed.py
+```
+
+This builds a 0.6.0 wheel, installs it into a fresh temporary environment and
+runs outside the checkout with `PYTHONPATH` removed. It checks all nine module
+origins, nine API queries, the console script and `python -m varilab`. Each CLI
+path repeats the nine queries and six demos, then rejects malformed, duplicate-key,
+nonfinite and oversized input with exit 2 and no partial JSON. The temporary
+wheel and environment are removed afterward.
+
+Installed results must match the source API results. This catches missing package
+files and broken entry points; it is not another independent mathematical oracle.
+The enumeration and analytic references stay in the unit suite above. Building
+the wheel needs pip, setuptools and wheel; the installed library still has no
+runtime dependencies.
+
 ## Limits and attribution
 
 For enumeration, "exact" means the complete finite support is visited with

@@ -45,3 +45,14 @@ jobs:
       - run: python -m varilab cyclic-map-demo > /tmp/cyclic-map-demo.json
       - run: python -m varilab cyclic-map examples/coupled.json --query '[1]' --evidence '[{"i":0,"spin":1}]'
       - run: PYTHONPATH=. python examples/render_cyclic_map.py --check
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install setuptools wheel
+      - run: python tools/check_installed.py
