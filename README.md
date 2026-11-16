@@ -332,3 +332,18 @@ The Ising implementation, rational score/count representation, resource
 contracts, constructed fixtures, independent test references and figures are
 original. No paper text, code or external dataset is bundled. Code is MIT.
 No network service, API key, paid service, model download or GPU is needed.
+
+## Full installed-suite check
+
+`python tools/check_installed.py` builds a wheel and runs the complete 183-test Python
+suite from copied tests, examples and figures outside the checkout. No package
+source is copied there. All nine package-module origins must stay inside the
+temporary installation before and after the tests. The existing source tests,
+demo commands and six figure-regeneration checks remain unchanged.
+
+The helper also compares all nine query and six demo API reports in full,
+then checks all 15 reports through both module and console commands. It retains
+the eight malformed-input refusals and checks installed origins again after
+command replay. These same-runtime packaging comparisons are not independent
+math references or new evidence for inference accuracy. Original arithmetic,
+resource limits, fixtures, tests, figures and tolerances are unchanged.
