@@ -1,4 +1,4 @@
-# VariLab
+# Ising inference
 
 Mean-field inference, tree message passing and bounded variable elimination for
 supplied Ising models. Compare a product approximation with all-state enumeration,
@@ -9,6 +9,9 @@ Fields and couplings are inputs, not learned parameters. The mean-field audit
 records every sequential coordinate update and keeps the ELBO, independently
 summed reverse KL, reference means and missing correlations visible. The other
 calculations keep their own arithmetic and resource limits.
+
+The repository is named `ising-inference`; the Python package and command remain
+`varilab` so existing scripts keep working.
 
 ## Choose a calculation
 
